@@ -1,7 +1,7 @@
 {%extends 'base.html'%}
 {%block content%}
 
-<div class="container">
+<div class="container pt-4">
   <h1>Log In</h1>
   {% if error %}
     <br>
@@ -11,9 +11,9 @@
   <br>
   <form class="" action="{% url 'login' %}" method="POST">
     {% csrf_token %}
-    Username:
+    Username or Email:
     <br>
-    <input type="text" name="username">
+    <input type="text" name="usernameoremail">
     <br>
     <br>
 

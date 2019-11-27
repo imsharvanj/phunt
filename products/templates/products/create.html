@@ -1,0 +1,48 @@
+{%extends 'base.html'%}
+{%block content%}
+
+<div class="container">
+  <h1>Create</h1>
+  {% if error %}
+    <br>
+    <span style="background: red">Error: {{ error }}</span>
+    <br>
+  {% endif %}
+  <br>
+  <form class="" action="{% url 'create' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    Title:
+    <br>
+    <input type="text" name="title">
+    <br>
+    <br>
+
+    Body:
+    <br>
+    <textarea name="body" rows="8" cols="80"></textarea>
+    <br>
+    <br>
+
+    URL:
+    <br>
+    <input type="text" name="url">
+    <br>
+    <br>
+
+    Icon:
+    <br>
+    <input type="file" name="icon">
+    <br>
+    <br>
+
+    Image:
+    <br>
+    <input type="file" name="image">
+    <br>
+    <br>
+
+    <input type="submit" class= "btn btn-primary" name="addproduct" value="Add Product">
+  </form>
+</div>
+
+{%endblock%}

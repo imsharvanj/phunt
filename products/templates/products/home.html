@@ -1,4 +1,18 @@
 {%extends 'base.html'%}
 {%block content%}
-home
+
+{% for product in products.all %}
+
+<div class="row pt-4">
+  <div class="col-2">
+    <img src="{{ product.icon.url }}" class="img-fluid" alt="icon">
+  </div>
+  <div class="col-6">
+    <h1>{{ product.title }}</h1>
+    <p>{{ product.summary }}</p>
+  </div>
+</div>
+
+{% endfor %}
+
 {%endblock%}

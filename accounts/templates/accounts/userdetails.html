@@ -1,0 +1,54 @@
+{%extends 'base.html'%}
+{%block content%}
+
+<div class="container pt-4">
+  <h1>Update Details</h1>
+  {% if error %}
+    <br>
+    <span style="background: red">Error: {{ error }}</span>
+    <br>
+  {% endif %}
+  <br>
+  <form class="" action="{% url 'userdetails' %}" method="POST">
+    {% csrf_token %}
+    Username:
+    <br>
+    <input type="text" name="username" value = "{{ hunter.username }}" required>
+    <br>
+    <br>
+
+
+    First Name:
+    <br>
+    <input type="text" name="first_name" value = "{{ hunter.first_name }}">
+    <br>
+    <br>
+
+    Last Name:
+    <br>
+    <input type="text" name="last_name" value = "{{ hunter.last_name }}">
+    <br>
+    <br>
+
+    Email:
+    <br>
+    <input type="text" name="email" value = "{{ hunter.email }}"required>
+    <br>
+    <br>
+
+    Password:
+    <br>
+    <input type="password" name="password1" required>
+    <br>
+    <br>
+
+    Confirm Password:
+    <br>
+    <input type="password" name="password2" required>
+    <br>
+    <br>
+    <input type="submit" class= "btn btn-danger" name="submit" value="Update">
+  </form>
+</div>
+
+{%endblock%}
